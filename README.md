@@ -1,5 +1,7 @@
 # Roulette
 
+Check it out at: https://webstrap.github.io/typescript-roulette/
+
 This is a train ride project, which I made on my ways to work.
 
 The purpose is to show that you can not win long-term in roulette,
