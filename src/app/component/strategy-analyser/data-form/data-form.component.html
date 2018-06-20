@@ -1,0 +1,31 @@
+<mat-expansion-panel [expanded]="true">
+  <mat-expansion-panel-header>
+    <mat-panel-title>
+      Load Data
+    </mat-panel-title>
+    <mat-panel-description>
+      Generate random numbers or upload via CSV file
+    </mat-panel-description>
+  </mat-expansion-panel-header>
+
+  <mat-form-field>
+    <mat-label>Name:</mat-label>
+    <input matInput [(ngModel)]="data.name" placeholder="name">
+  </mat-form-field>
+  <mat-form-field>
+    <mat-label>Type:</mat-label>
+    <mat-select placeholder="Select type of numbers" [(ngModel)]="type">
+      <mat-option>None</mat-option>
+      <mat-option *ngFor="let element of typeList" [value]="element" >{{element}}</mat-option>
+    </mat-select>
+  </mat-form-field>
+  <mat-form-field *ngIf="isRandom()">
+    <mat-label>Generate Numbers:</mat-label>
+    <input matInput [(ngModel)]="count" placeholder="count" type="number" min="0" max="1000000" > 
+  </mat-form-field>
+  <mat-form-field *ngIf="!isRandom()" >
+      <mat-label>Import Numbers:</mat-label>
+      <textarea matInput placeholder="paste here" [(ngModel)]="import"></textarea>
+    </mat-form-field>
+  <button (click)="onClickCreateData()" mat-button mat-raised-button matTooltip="Numbers will be read left to right, then bottom to top. So you can enter them in one row, multiple rows, but not in columns.">Create Data</button>
+</mat-expansion-panel>

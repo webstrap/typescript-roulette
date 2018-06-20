@@ -1,0 +1,119 @@
+<div>
+  <app-data-form></app-data-form>
+
+  
+  <mat-form-field>
+      <mat-select placeholder="Select Dataset" [(ngModel)]="data" (selectionChange)="changeDataUrl($event)" >
+        <mat-option>None</mat-option>
+        <mat-option *ngFor="let element of dataList" [value]="element" >{{element}}</mat-option>
+      </mat-select>
+  </mat-form-field> 
+  
+
+  <table mat-table *ngIf="data" [dataSource]=[data] class="mat-elevation-z8">
+    <ng-container matColumnDef="odd">
+      <th mat-header-cell *matHeaderCellDef> Odd </th>
+      <td mat-cell *matCellDef="let element" [ngClass]="[ element.statistics.odd < 100/2?'red':'green' ]" > {{element.statistics.odd | number:'1.0-2' }} % </td>
+    </ng-container>
+    <ng-container matColumnDef="even">
+      <th mat-header-cell *matHeaderCellDef> Even </th>
+      <td mat-cell *matCellDef="let element" [ngClass]="[ element.statistics.even < 100/2?'red':'green' ]"> {{element.statistics.even | number:'1.0-2' }} % </td>
+    </ng-container>
+    <ng-container matColumnDef="red">
+      <th mat-header-cell *matHeaderCellDef> Red </th>
+      <td mat-cell *matCellDef="let element" [ngClass]="[ element.statistics.red < 100/2?'red':'green' ]"> {{element.statistics.red | number:'1.0-2' }} % </td>
+    </ng-container>
+    <ng-container matColumnDef="black">
+      <th mat-header-cell *matHeaderCellDef> Black </th>
+      <td mat-cell *matCellDef="let element" [ngClass]="[ element.statistics.black < 100/2?'red':'green' ]"> {{element.statistics.black | number:'1.0-2' }} % </td>
+    </ng-container>
+    <ng-container matColumnDef="low">
+      <th mat-header-cell *matHeaderCellDef> Low </th>
+      <td mat-cell *matCellDef="let element" [ngClass]="[ element.statistics.low < 100/2?'red':'green' ]"> {{element.statistics.low | number:'1.0-2' }} % </td>
+    </ng-container>
+    <ng-container matColumnDef="high">
+      <th mat-header-cell *matHeaderCellDef> high </th>
+      <td mat-cell *matCellDef="let element" [ngClass]="[ element.statistics.high < 100/2?'red':'green' ]"> {{element.statistics.high | number:'1.0-2' }} % </td>
+    </ng-container>
+    <ng-container matColumnDef="dozen_1">
+      <th mat-header-cell *matHeaderCellDef> Dozen 1 </th>
+      <td mat-cell *matCellDef="let element" [ngClass]="[ element.statistics.dozen_1 < 100/3?'red':'green' ]"> {{element.statistics.dozen_1 | number:'1.0-2' }} % </td>
+    </ng-container>
+    <ng-container matColumnDef="dozen_2">
+      <th mat-header-cell *matHeaderCellDef> Dozen 2 </th>
+      <td mat-cell *matCellDef="let element" [ngClass]="[ element.statistics.dozen_2 < 100/3?'red':'green' ]"> {{element.statistics.dozen_2 | number:'1.0-2' }} % </td>
+    </ng-container>
+    <ng-container matColumnDef="dozen_3">
+      <th mat-header-cell *matHeaderCellDef> Dozen 3 </th>
+      <td mat-cell *matCellDef="let element" [ngClass]="[ element.statistics.dozen_3 < 100/3?'red':'green' ]"> {{element.statistics.dozen_3 | number:'1.0-2' }} % </td>
+    </ng-container>
+    <ng-container matColumnDef="column_1">
+      <th mat-header-cell *matHeaderCellDef> Column 1 </th>
+      <td mat-cell *matCellDef="let element" [ngClass]="[ element.statistics.column_1 < 100/3?'red':'green' ]"> {{element.statistics.column_1 | number:'1.0-2' }} % </td>
+    </ng-container>
+    <ng-container matColumnDef="column_2">
+      <th mat-header-cell *matHeaderCellDef> Column 2 </th>
+      <td mat-cell *matCellDef="let element" [ngClass]="[ element.statistics.column_2 < 100/3?'red':'green' ]"> {{element.statistics.column_2 | number:'1.0-2' }} % </td>
+    </ng-container>
+    <ng-container matColumnDef="column_3">
+      <th mat-header-cell *matHeaderCellDef> Column 3 </th>
+      <td mat-cell *matCellDef="let element" [ngClass]="[ element.statistics.column_3 < 100/3?'red':'green' ]"> {{element.statistics.column_3 | number:'1.0-2' }} % </td>
+    </ng-container>
+
+    <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
+    <tr mat-row *matRowDef="let row; columns: displayedColumns;"></tr>
+  </table>
+
+  <table mat-table *ngIf="data" [dataSource]=[data] class="mat-elevation-z8">
+    <ng-container matColumnDef="transversale_01_06">
+      <th mat-header-cell *matHeaderCellDef> Transversale 1-6 </th>
+      <td mat-cell *matCellDef="let element" [ngClass]="[ element.statistics.transversale_01_06 < 100/6?'red':'green' ]"> {{element.statistics.transversale_01_06 | number:'1.0-2' }} % </td>
+    </ng-container>
+    <ng-container matColumnDef="transversale_07_12">
+      <th mat-header-cell *matHeaderCellDef> Transversale 7-12 </th>
+      <td mat-cell *matCellDef="let element" [ngClass]="[ element.statistics.transversale_07_12 < 100/6?'red':'green' ]"> {{element.statistics.transversale_07_12 | number:'1.0-2' }} % </td>
+    </ng-container>
+    <ng-container matColumnDef="transversale_13_18">
+      <th mat-header-cell *matHeaderCellDef> Transversale 13-18 </th>
+      <td mat-cell *matCellDef="let element" [ngClass]="[ element.statistics.transversale_13_18 < 100/6?'red':'green' ]"> {{element.statistics.transversale_13_18 | number:'1.0-2' }} % </td>
+    </ng-container>
+    <ng-container matColumnDef="transversale_19_24">
+      <th mat-header-cell *matHeaderCellDef> Transversale 19-24 </th>
+      <td mat-cell *matCellDef="let element" [ngClass]="[ element.statistics.transversale_19_24 < 100/6?'red':'green' ]"> {{element.statistics.transversale_19_24 | number:'1.0-2' }} % </td>
+    </ng-container>
+    <ng-container matColumnDef="transversale_25_30">
+      <th mat-header-cell *matHeaderCellDef> Transversale 24-30 </th>
+      <td mat-cell *matCellDef="let element" [ngClass]="[ element.statistics.transversale_25_30 < 100/6?'red':'green' ]"> {{element.statistics.transversale_25_30 | number:'1.0-2' }} % </td>
+    </ng-container>
+    <ng-container matColumnDef="transversale_31_36">
+      <th mat-header-cell *matHeaderCellDef> Transversale 31-36 </th>
+      <td mat-cell *matCellDef="let element" [ngClass]="[ element.statistics.transversale_31_36 < 100/6?'red':'green' ]"> {{element.statistics.transversale_31_36 | number:'1.0-2' }} % </td>
+    </ng-container>
+
+    <tr mat-header-row *matHeaderRowDef="displayedColumns2"></tr>
+    <tr mat-row *matRowDef="let row; columns: displayedColumns2;"></tr>
+  </table>
+
+  <div>
+    <div style="width:400px;float:left;">
+      <canvas id="colorCanvas" ></canvas>
+    </div>
+    <div style="width:400px;float:left;">
+      <canvas id="parityCanvas" ></canvas>
+    </div>
+    <div style="width:400px;float:left;">
+      <canvas id="lowHeighCanvas" ></canvas>
+    </div>
+  </div>
+  <div>
+    <div style="width:400px;float:left;">
+      <canvas id="dozenCanvas" ></canvas>
+    </div>
+    <div style="width:400px;float:left;">
+      <canvas id="columnCanvas" ></canvas>
+    </div>
+    <div style="width:400px;float:left;">
+      <canvas id="transversaleCanvas" ></canvas>
+    </div>
+  </div>
+</div>

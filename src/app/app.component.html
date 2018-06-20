@@ -1,0 +1,16 @@
+<mat-toolbar color="accent">  
+
+  <mat-toolbar-row>
+    <a mat-button routerLink="/analyser">Strategy Analyser</a>
+    <a mat-button routerLink="/statistics"><span>Statistics</span></a>
+    <a mat-button routerLink="/log"><span>Game Log</span></a>
+    <a mat-button routerLink="/live"><span>Live Mode</span></a>
+    
+    <span style="flex: 1 1 auto;"></span>
+
+    <a mat-button (click)="resetLocalStorage()">reset</a>
+  </mat-toolbar-row>
+</mat-toolbar>
+<div class="content">
+  <router-outlet></router-outlet>
+</div>

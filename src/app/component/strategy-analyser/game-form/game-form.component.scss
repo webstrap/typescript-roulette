@@ -1,0 +1,23 @@
+.mat-tab-body-content {
+  display: flex;
+  flex-wrap: wrap;
+  flex-direction: row;
+}
+
+
+.app-game-list {
+  max-width: 900px;
+  width: 100%;
+  flex: 0 0 100%;
+}
+.mat-expansion-panel {
+  max-width: 900px;
+  margin: 20px;
+}
+.mat-form-field {
+  padding: 20px;
+}
+
+.mat-expansion-panel-header-title {
+  font-weight: bold;
+}

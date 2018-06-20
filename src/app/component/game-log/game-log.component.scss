@@ -1,0 +1,37 @@
+.mat-cell, .mat-header-cell {
+  padding: 10px;
+  text-align: center;
+}
+
+.mat-cell:first-child, .mat-header-cell:first-child {
+  padding-right: 24px;
+  font-size: 16px;
+}
+
+.back-to-top {
+  position:fixed;
+  bottom: 20px;
+  right: 20px;
+}
+
+table {
+  margin: auto;
+}
+
+.green {
+  background-color: green;
+}
+.red {
+  background-color: red;
+  font-weight: bold;
+}
+
+.black {
+  background-color: black;
+  color: white;
+  font-weight: bold;
+}
+
+.grey {
+  background-color: #f1f1f1;
+}

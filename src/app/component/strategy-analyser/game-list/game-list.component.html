@@ -1,0 +1,110 @@
+<table mat-table [dataSource]=gameList$ class="mat-elevation-z8">
+  <ng-container matColumnDef="data">
+    <th mat-header-cell *matHeaderCellDef> Data </th>
+    <td mat-cell *matCellDef="let element"> {{element.data}} </td>
+  </ng-container>
+  <ng-container matColumnDef="strategy">
+    <th mat-header-cell *matHeaderCellDef> Strategy </th>
+    <td mat-cell *matCellDef="let element"> {{element.strategy}} </td>
+  </ng-container>
+  <ng-container matColumnDef="minBalance">
+    <th mat-header-cell *matHeaderCellDef> Lowest Balance </th>
+    <td mat-cell *matCellDef="let element"> {{element.minBalance}} </td>
+  </ng-container>
+  <ng-container matColumnDef="maxBalance">
+    <th mat-header-cell *matHeaderCellDef> Highest Balance </th>
+    <td mat-cell *matCellDef="let element"> {{element.maxBalance}} </td>
+  </ng-container>
+  <ng-container matColumnDef="finalBalance">
+    <th mat-header-cell *matHeaderCellDef> Final Balance </th>
+    <td mat-cell *matCellDef="let element"> {{element.finalBalance}} </td>
+  </ng-container>
+  <ng-container matColumnDef="played">
+    <th mat-header-cell *matHeaderCellDef> Played </th>
+    <td mat-cell *matCellDef="let element"> {{element.played}} </td>
+  </ng-container>
+  <ng-container matColumnDef="statistics">
+    <th mat-header-cell *matHeaderCellDef>  </th>
+    <td mat-cell *matCellDef="let element"> <a routerLink="/statistics/{{element.data.id}}"> Statistics </a></td>
+  </ng-container>
+  <ng-container matColumnDef="log">
+    <th mat-header-cell *matHeaderCellDef>  </th>
+    <td mat-cell *matCellDef="let element"> <a routerLink="/log/{{element.id}}"> Game Log</a></td>
+  </ng-container>
+  <ng-container matColumnDef="odd">
+    <th mat-header-cell *matHeaderCellDef> Odd </th>
+    <td mat-cell *matCellDef="let element"> {{element.data.statistics.odd | number:'1.0-2' }} % </td>
+  </ng-container>
+  <ng-container matColumnDef="even">
+    <th mat-header-cell *matHeaderCellDef> Even </th>
+    <td mat-cell *matCellDef="let element"> {{element.data.statistics.even | number:'1.0-2' }} % </td>
+  </ng-container>
+  <ng-container matColumnDef="red">
+    <th mat-header-cell *matHeaderCellDef> Red </th>
+    <td mat-cell *matCellDef="let element"> {{element.data.statistics.red | number:'1.0-2' }} % </td>
+  </ng-container>
+  <ng-container matColumnDef="black">
+    <th mat-header-cell *matHeaderCellDef> Black </th>
+    <td mat-cell *matCellDef="let element"> {{element.data.statistics.black | number:'1.0-2' }} % </td>
+  </ng-container>
+  <ng-container matColumnDef="low">
+    <th mat-header-cell *matHeaderCellDef> Low </th>
+    <td mat-cell *matCellDef="let element"> {{element.data.statistics.low | number:'1.0-2' }} % </td>
+  </ng-container>
+  <ng-container matColumnDef="high">
+    <th mat-header-cell *matHeaderCellDef> high </th>
+    <td mat-cell *matCellDef="let element"> {{element.data.statistics.high | number:'1.0-2' }} % </td>
+  </ng-container>
+  <ng-container matColumnDef="dozen_1">
+    <th mat-header-cell *matHeaderCellDef> Dozen 1 </th>
+    <td mat-cell *matCellDef="let element"> {{element.data.statistics.dozen_1 | number:'1.0-2' }} % </td>
+  </ng-container>
+  <ng-container matColumnDef="dozen_2">
+    <th mat-header-cell *matHeaderCellDef> Dozen 2 </th>
+    <td mat-cell *matCellDef="let element"> {{element.data.statistics.dozen_2 | number:'1.0-2' }} % </td>
+  </ng-container>
+  <ng-container matColumnDef="dozen_3">
+    <th mat-header-cell *matHeaderCellDef> Dozen 3 </th>
+    <td mat-cell *matCellDef="let element"> {{element.data.statistics.dozen_3 | number:'1.0-2' }} % </td>
+  </ng-container>
+  <ng-container matColumnDef="column_1">
+    <th mat-header-cell *matHeaderCellDef> Column 1 </th>
+    <td mat-cell *matCellDef="let element"> {{element.data.statistics.column_1 | number:'1.0-2' }} % </td>
+  </ng-container>
+  <ng-container matColumnDef="column_2">
+    <th mat-header-cell *matHeaderCellDef> Column 2 </th>
+    <td mat-cell *matCellDef="let element"> {{element.data.statistics.column_2 | number:'1.0-2' }} % </td>
+  </ng-container>
+  <ng-container matColumnDef="column_3">
+    <th mat-header-cell *matHeaderCellDef> Column 3 </th>
+    <td mat-cell *matCellDef="let element"> {{element.data.statistics.column_3 | number:'1.0-2' }} % </td>
+  </ng-container>
+  <ng-container matColumnDef="transversale_01_06">
+    <th mat-header-cell *matHeaderCellDef> Transversale 1-6 </th>
+    <td mat-cell *matCellDef="let element"> {{element.data.statistics.transversale_01_06 | number:'1.0-2' }} % </td>
+  </ng-container>
+  <ng-container matColumnDef="transversale_07_12">
+    <th mat-header-cell *matHeaderCellDef> Transversale 7-12 </th>
+    <td mat-cell *matCellDef="let element"> {{element.data.statistics.transversale_07_12 | number:'1.0-2' }} % </td>
+  </ng-container>
+  <ng-container matColumnDef="transversale_13_18">
+    <th mat-header-cell *matHeaderCellDef> Transversale 13-18 </th>
+    <td mat-cell *matCellDef="let element"> {{element.data.statistics.transversale_13_18 | number:'1.0-2' }} % </td>
+  </ng-container>
+  <ng-container matColumnDef="transversale_19_24">
+    <th mat-header-cell *matHeaderCellDef> Transversale 19-24 </th>
+    <td mat-cell *matCellDef="let element"> {{element.data.statistics.transversale_19_24 | number:'1.0-2' }} % </td>
+  </ng-container>
+  <ng-container matColumnDef="transversale_25_30">
+    <th mat-header-cell *matHeaderCellDef> Transversale 24-30 </th>
+    <td mat-cell *matCellDef="let element"> {{element.data.statistics.transversale_25_30 | number:'1.0-2' }} % </td>
+  </ng-container>
+  <ng-container matColumnDef="transversale_31_36">
+    <th mat-header-cell *matHeaderCellDef> Transversale 31-36 </th>
+    <td mat-cell *matCellDef="let element"> {{element.data.statistics.transversale_31_36 | number:'1.0-2' }} % </td>
+  </ng-container>
+  
+  <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
+  <tr mat-row *matRowDef="let row; columns: displayedColumns;"></tr>
+</table>
+ 

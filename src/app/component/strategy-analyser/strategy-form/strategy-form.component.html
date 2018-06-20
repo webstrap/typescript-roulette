@@ -1,0 +1,27 @@
+<mat-expansion-panel [expanded]="true">
+  <mat-expansion-panel-header>
+    <mat-panel-title>
+      Strategy
+    </mat-panel-title>
+    <mat-panel-description>
+      Define a strategy by choosing on which numbers to bet, how long to wait until betting and how to long to progress until stopping.
+    </mat-panel-description>
+  </mat-expansion-panel-header>
+
+  <mat-form-field>
+    <mat-label>Mode:</mat-label>
+    <mat-select placeholder="Select type of numbers" [(ngModel)]="strategy.mode">
+      <mat-option>None</mat-option>
+      <mat-option *ngFor="let element of modes" [value]="element" >{{element}}</mat-option>
+    </mat-select>
+  </mat-form-field>
+  <mat-form-field>
+    <mat-label>Misses:</mat-label>
+    <input matInput [(ngModel)]="strategy.misses" placeholder="misses">
+  </mat-form-field>
+  <mat-form-field>
+    <mat-label>Stop-Loss Pieces:</mat-label>
+    <input matInput [(ngModel)]="strategy.stopLoss" placeholder="stopLoss">
+  </mat-form-field>
+  <button (click)="onClickAddStrategy()" mat-button>Add/Select Strategy</button>
+</mat-expansion-panel>

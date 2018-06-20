@@ -1,0 +1,19 @@
+<mat-form-field>
+  <mat-label>Number fallen:</mat-label>
+  <input matInput [(ngModel)]="number" placeholder="number">
+</mat-form-field>
+<mat-form-field>
+  <mat-select placeholder="Select Strategy" [(ngModel)]="selectedStrategy">
+    <mat-option>None</mat-option>
+    <mat-option *ngFor="let element of strategyList" [value]="element" >{{element}}</mat-option>
+  </mat-select>
+</mat-form-field>
+
+<p>
+  Dummy: here will be
+
+  put 5 pieces on 1-6 and 2 pieces on 25-30
+</p>
+<p>
+  A log of number, placed pieces and current balance
+</p>
