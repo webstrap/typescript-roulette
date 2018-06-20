@@ -1,6 +1,6 @@
 # Roulette
 
-This is a trainride project, which I made on my ways to work.
+This is a train ride project, which I made on my ways to work.
 
 The purpose is to show that you can not win long-term in roulette,
 no matter for how many misses you wait or how often you double your stake.
